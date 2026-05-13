@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="style.css">
+        <title>date picker</title>
+        <script src="https://unpkg.com/jalali-moment@3.3.11/dist/jalali-moment.browser.js"></script>
+        <style>
+            #input-date {
+                border: 1px solid;
+                padding: 10px 20px;
+                border-radius: 10px;
+                font-size: 1.1rem;
+                direction: rtl;
+                text-align: center;
+            }
+
+            #finished {
+                margin-right: 80px;
+            }
+
+        </style>
+    </head>
+
+    <body id="body">
+        <section>
+            <input id="input-date" class="input" type="text" value="" readonly>
+
+            <div class="external" id="external">
+                <div class="internal">
+                    <div class="header">
+                        <span id="pereveus-month"><</span>
+                        <span id="current-date">اردیبهشت</span>
+                        <span id="next-month"> > </span>
+                    </div>
+
+                    <div class="dates-solid">
+                        <span class="unhover">شنبه</span>
+                        <span class="unhover">یکشنبه</span>
+                        <span class="unhover">دوشنبه</span>
+                        <span class="unhover">سه شنبه</span>
+                        <span class="unhover">چهارشنبه</span>
+                        <span class="unhover">پنجشنبه</span>
+                        <span class="unhover">جمعه</span>
+
+                        <div class="dates" id="heyy">
+                            <span onclick="doLog('1')">1</span>
+                            <span onclick="doLog('2')">2</span>
+                            <span onclick="doLog('3')">3</span>
+                            <span onclick="doLog('4')">4</span>
+                            <span onclick="doLog('5')">5</span>
+                            <span onclick="doLog('6')">6</span>
+                            <span onclick="doLog('7')">7</span>
+                            <span onclick="doLog('8')">8</span>
+                            <span onclick="doLog('9')">9</span>
+                            <span onclick="doLog('10')">10</span>
+                            <span onclick="doLog('11')">11</span>
+                            <span onclick="doLog('12')">12</span>
+                            <span onclick="doLog('13')">13</span>
+                            <span onclick="doLog('14')">14</span>
+                            <span onclick="doLog('15')">15</span>
+                            <span onclick="doLog('16')">16</span>
+                            <span onclick="doLog('17')">17</span>
+                            <span onclick="doLog('18')">18</span>
+                            <span onclick="doLog('19')">19</span>
+                            <span onclick="doLog('20')">20</span>
+                            <span onclick="doLog('21')">21</span>
+                            <span onclick="doLog('22')">22</span>
+                            <span onclick="doLog('23')">23</span>
+                            <span onclick="doLog('24')">24</span>
+                            <span onclick="doLog('25')">25</span>
+                            <span onclick="doLog('26')">26</span>
+                            <span onclick="doLog('27')">27</span>
+                            <span onclick="doLog('28')">28</span>
+                            <span onclick="doLog('29')" id="twenty9">29</span>
+                            <span onclick="doLog('30')" id="thirty">30</span>
+                            <span onclick="doLog('31')" id="thirty1">31</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="footer-line">
+                    <button class="btn-goToFirst" onclick="resetTime()">برو به اول</button>
+                </div>
+            </div>
+        </section>
+
+        <button type="button" id="next"><</button>
+        <button type="button" id="previous">></button>
+
+        <!-- <input type="text" id="input-date" value=""> -->
+
+        <script src="script.js"></script>
+        <script src="script2.js"></script>
+    </body>
+</html>

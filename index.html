@@ -25,7 +25,12 @@
 
     <body id="body">
         <section>
-            <input id="input-date" class="input" type="text" value="" readonly>
+<!--            <input id="input-date" class="input" type="text" value="" readonly>-->
+            <div id="input-date" class="input">
+                <span class="year" id="year">year/</span>
+                <span class="month" id="month">month/</span>
+                <span class="day" id="day">day</span>
+            </div>
 
             <div class="external" id="external">
                 <div class="internal">
@@ -82,14 +87,14 @@
 
                 <div class="footer-line">
                     <button class="btn-goToFirst" onclick="resetTime()">برو به اول</button>
+                    <button class="btnShowMore">بیشتر نشون بده</button>
                 </div>
             </div>
         </section>
 
-        <button type="button" id="next"><</button>
-        <button type="button" id="previous">></button>
+        <div class="forSecondMenuYear" id="yearMenu">
 
-        <!-- <input type="text" id="input-date" value=""> -->
+        </div>
 
         <script src="script.js"></script>
         <script src="script2.js"></script>

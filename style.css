@@ -36,6 +36,13 @@ body {
     font-size: 16px;
     box-shadow: 0.4px 0.4px 3px rgba(0, 0, 0, 1);
     outline: none;
+    background-color: white;
+
+    span{
+        border: 1px solid;
+
+
+    }
 
 }
 
@@ -200,4 +207,49 @@ body {
 
 .btn-goToFirst:hover {
     background-color: rgb(115, 36, 122);
+}
+
+
+.forSecondMenuYear{
+    /*border: 1px solid black;*/
+    width: 330px ;
+    height: 350px;
+    margin-left: 20px;
+    border-radius: 8px;
+    box-shadow: 0.3px 0.3px 3px black;
+    background-color: white;
+    direction: ltr;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr  ;
+    overflow: auto;
+
+
+}
+.btnShowMore{
+    /*width: 50px ;*/
+    /*height: 20px;*/
+    border: 1px solid;
+    cursor: pointer;
+    transition: 0.3s;
+
+}
+.btnShowMore:hover{
+    background-color: rgb(115, 36, 122);
+
+
+}
+.forSecondMenuYear span{
+    /*border: 1px solid;*/
+    width: 60px;
+    height: 60px;
+    /*border-radius: 50px;*/
+    line-height: 40px;
+    font-size: 1rem;
+    font-weight: bolder;
+    transition: 0.2s;
+}
+.forSecondMenuYear span:hover{
+    background-color: #161b40;
+    color: white;
+    box-shadow: 1px 1px 3px black;
 }

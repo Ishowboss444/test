@@ -2,12 +2,14 @@ let input1 = document.getElementById('input-date');
 let timeJustRightNow = moment();
 let finished = document.getElementById;
 let monthnow = document.getElementById('current-date');
-let monthOnShow = timeJustRightNow.jMonth();
+let monthOnShow = timeJustRightNow.jMonth("MM");
 let yearOnShow = timeJustRightNow.jYear();
 let dateOnShow = timeJustRightNow.jDate();
 let dayOnShow = timeJustRightNow.jDay();
 let daysInMonth = timeJustRightNow.daysInMonth();
-
+let day = document.getElementById('day')
+let monthLab = document.getElementById('month')
+let year = document.getElementById('year')
 
 const month = ['فروردین', 'اردیبهشت', 'خرداد', 'تیر', 'مرداد', 'شهریور', 'مهر', 'ابان', 'اذر', 'دی', 'بهمن', 'اسفند'];
 let outPut = month[monthOnShow];
@@ -24,7 +26,9 @@ const twenty9 = document.getElementById('twenty9');
 const thirty = document.getElementById('thirty');
 const thirty1 = document.getElementById('thirty1');
 
-monthnow.innerHTML = outPut;
+monthLab.innerHTML = `${moment().local('fa').format("jMMMM")} / `
+year.innerHTML = `${moment().local('fa').format("jYYYY")} / `
+day.innerHTML = `${moment().local('fa').format("jD")} / `
 
 
 //لوپ برای جنریت روز های هر ماه
@@ -36,6 +40,21 @@ window.onload = function () {
         div.insertBefore(spanMade, div.firstChild);
         gheyb.classList.add('none');
     }
+
+    let spanYear = document.getElementById("yearMenu")
+    let yearCounter;
+    let spanGenerator = ""
+    const secondMenu = document.getElementById("yearMenu")
+    for(yearCounter = 0 ; yearCounter <= 100 ; yearCounter++) {
+        const addSpan =
+            `
+    <span class="unhover">${yearOnShow - yearCounter}</span>
+        `
+        spanGenerator += addSpan
+    }
+
+    spanYear.innerHTML = spanGenerator
+
 };
 //تمام
 
@@ -57,10 +76,14 @@ nextSpan.addEventListener('click', function () {
         r++;
 
     }
-    monthOnShow = i;
-    // console.log(monthOnShow)
+    // console.log(monthOnShow.add(1 , "month"))
+    let result = monthOnShow.add(1 , "month").format("jMMMM")
+    monthLab.innerHTML= result
+    monthOnShow = result
+    // // console.log(monthOnShow)
+    //
+    // monthnow.innerHTML = month[i];
 
-    monthnow.innerHTML = month[i];
     if (persianDateInMonth[i] < 31 && persianDateInMonth[i] > 29) {
         thirty1.classList.add('none');
     } else if (persianDateInMonth[i] < 30 && persianDateInMonth[i] > 28) {
@@ -113,7 +136,7 @@ perivious.addEventListener('click', function () {
 // console.log(i)
 function doLog(input) {
     let theDay = input;
-    console.log(theDay);
+    // console.log(theDay);
     textResult[0] = input;
     dateOnShow = input;
     e = `${input} | ${month[i]} | ${yearOnShow + r}`;
@@ -141,7 +164,9 @@ function resetTime() {
     gheyb.classList.add('none');
 };
 
-
-const dfdf = document.getElementsByTagName('body')[0];
-console.log(dfdf);
-
+document.getElementById("yearMenu").addEventListener("click" , function hi(event){
+    event.stopPropagation()
+    let afterClickYear = Number((moment(`${event.target.textContent}`).format('YYYY')));
+    yearOnShow = afterClickYear
+    console.log(yearOnShow)
+})
